@@ -39,7 +39,18 @@ client.on("message", function (message){
 
         switch(cmd){
             case "help":
-                message.author.send("Commands \n gif <search term> - random gif using search term (uses giphy) \n gifs <search term> - top gif of search term (uses giphy) \n -ping - pong \n roll <XdY> - Rolls XdY");
+                message.author.send("Commands \n gif <search term> - random gif using search term (uses giphy) \n gifs <search term> - top gif of search term (uses giphy) \n -ping - pong \n poll <question here> - creates a poll with a default 👍 & 👎 reaction \n roll <XdY> - Rolls XdY");
+                break;
+            case "poll":
+                let pollTerm = msg.splice(1).toString();
+                    message.channel.send(pollTerm);
+                    .then(funtion (message) {
+                    message.react('👍')
+                    message.react('👎')
+                    message.pin()
+        }).catch(function() {
+                });
+                break;
             case "ping":
                 message.channel.send("pong");
                 break;
