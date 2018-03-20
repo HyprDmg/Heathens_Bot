@@ -38,6 +38,8 @@ client.on("message", function (message){
         let cmd = msg[0].substring(1);
 
         switch(cmd){
+            case "help":
+                message.author.send("Commands \n gif <search term> - random gif using search term (uses giphy) \n gifs <search term> - top gif of search term (uses giphy) \n -ping - pong \n roll <XdY> - Rolls XdY");
             case "ping":
                 message.channel.send("pong");
                 break;
