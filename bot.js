@@ -47,7 +47,6 @@ client.on("message", function (message){
                     .then(funtion (message) {
                     message.react('👍')
                     message.react('👎')
-                    message.pin()
         }).catch(function() {
                 });
                 break;
